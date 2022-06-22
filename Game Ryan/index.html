@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+ <title>Galgje</title>
+</head>
+<body>
+
+<h1>Galgje</h1>
+<p>Herlaad de pagina om opnieuw te beginnen</p>
+
+<script>
+//woorden lijst array
+
+var woorden = ["aardbei", "boterham", "poker", "adapter", "videokaart", "brandweer",
+"computer","printer","schroevendraaier","muziek","boek","website",
+"rekenmachine","toetsenbord","internet","muis","opdracht","programma"];
+
+//pak een random woord van de array
+var woord = woorden[Math.floor(Math.random() * woorden.length)];
+
+//laat zien hoeveel letters het woord heeft
+//door _'s te gebruiken
+var answerArray = [];
+for (var i = 0; i < woord.length; i++) {
+ answerArray[i] = "_";
+}
+
+//een variabele creëren voor de levens
+var remainingLetters = woord.length;
+
+// Hier komt het grote gedeelte van de game
+
+while (remainingLetters > 0) {
+    //laat de progressie zien
+    alert(answerArray.join(" "));
+
+    //vraag een letter van de gebruiker
+    var vraag = prompt("Kies een letter");
+
+    //check of de letter in het woord zit
+    if (vraag == null) {
+        //als de gebruiker geen letter heeft gekozen
+    break;
+    //als de gebruiker geen letter heeft gekozen of meer dan 1
+    } else if (vraag.length !== 1){
+    //waarschuwt om 1 letter in te voeren
+    alert("Je moet 1 letter kiezen");
+    //goede keuze
+    } else {
+
+        for (var j = 0; j < woord.length; j++) {
+            if (woord[j] === vraag) {
+                answerArray[j] = vraag;
+                remainingLetters--;
+            }
+        }
+    }
+
+}
+//als het woord is geraden
+alert(answerArray.join(" "));
+alert("Gefeliciteerd, je hebt het woord geraden!");
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
