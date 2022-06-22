@@ -1,0 +1,239 @@
+/* Technowire Home.html */
+body {
+  background-color:#cd9575;
+  overflow-x:hidden;
+  margin: 0 0 0 0;
+  height: 100vh;
+  width:100vw;
+}
+#Header img{
+  height:100px;
+  width: auto;
+  margin-left:20px;
+}
+.flexgrid {
+  display: flex;
+
+}
+
+.container {
+  /* display: flex; */
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.0fr 1.0fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Header Header Header Header Header Header Sidebar Sidebar"
+    "underbar underbar underbar underbar underbar underbar Sidebar Sidebar"
+    "main main main main main main Sidebar Sidebar"
+    "main main main main main main Sidebar Sidebar"
+    "main main main main main main Sidebar Sidebar"
+    "footer footer footer footer footer footer footer footer";
+}
+
+#Header {
+  justify-content:flex-start;
+  align-items:center;
+  background-image: url("../images/Schaakbord.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  grid-area: Header;
+}
+
+
+#main {
+  grid-area: main;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+
+#Sidebar {
+  height: 100vh;
+  background-color: #be2d32;
+  grid-area: Sidebar;
+}
+#Sidebar {
+  display: flex;
+  padding-left:35px;
+  justify-content: center;
+  align-items: center;
+  grid-area: Sidebar;
+}
+
+#footer {
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  font-family: 'Agency FB', arial;
+  color: white;
+  background-color: #be2d32;
+  grid-area: footer;
+}
+
+#footer > p{
+  font-size:14px;
+}
+
+#underbar {
+  height:100px;
+  display:flex;
+  justify-content:center;
+  font-family: Agency FB;
+  color: white;
+  background-color: #cd9575;
+  grid-area: underbar;
+}
+*{
+  box-sizing: border-box;
+  font-family: 'Agency FB',arial;
+  font-weight:20px;
+}
+#img1 {
+
+}
+
+#img2 {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+}
+
+.text {
+  display:flex;
+  font-family: Agency FB;
+  color: white;
+  margin-top: 20px;
+  font-size: 1.5em;
+  padding-bottom: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#imagepanel {
+
+  justify-content: center;
+  display: flex;
+}
+
+.sideimg {
+  margin-top:20px;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  padding-left:10px;
+  width:21%;
+}
+#textpanel{
+  height:500px;
+  margin-left:80px;
+  padding-right:40px;
+  margin-bottom:10px;
+  font-family: Agency FB;
+  font-size:18px;
+  display:flex;
+  align-items: center;
+  text-align:left;
+  flex-direction: column;
+}
+.text:hover{
+  text-decoration:underline;
+  color:black;
+}
+
+
+
+
+
+/* media querys */
+@media only screen and (max-width:700px){
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.3fr 0.7fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr 2fr 1.8fr 0.2fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar"
+    "Header Header Header Header Header Header Header Header"
+    "underbar underbar underbar underbar underbar underbar underbar underbar"
+    "main main main main main main main main"
+    "main main main main main main main main"
+    "footer footer footer footer footer footer footer footer";
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+  }
+#img1{
+  width:25%;
+}
+body{
+  overflow:auto;
+}
+#Sidebar{
+  padding:0;
+  margin:0;
+  justify-content:center;
+  height:15.7vh;
+}
+#Header{
+  margin:0;
+  padding:0;
+}
+.text {
+    line-height:0.9;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+#imagepanel {
+  padding-right:20px;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin-right:30px;
+}
+#textpanel{
+  font-size:14px;
+  height:300px;
+  align-items: center;
+  padding-right:40px;
+  margin-left: 30px;
+  margin-bottom:200px;
+}
+.sideimg {
+  height:100px;
+  margin-left:10px;
+}
+#footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  font-family: 'Agency FB', arial;
+  font-size: 13px;
+  color: white;
+  grid-area: footer;
+
+}
+#footer p {
+  position: absolute;
+  top:0;
+  font-size:10px;
+}
+}
